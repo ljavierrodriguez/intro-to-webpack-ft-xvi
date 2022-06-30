@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './App.scss';
 
 function Input({ type, id, name, placeholder, value, style, className }) {
     return (
         <>
-            <label>{name}: </label> <br />
-            <input type={type} id={id} name={name} placeholder={placeholder} defaultValue={value} style={style} className={className} />  <br />
+            <div className="form-group mb-3">
+                <label className="form-label">{name}: </label>
+                <input type={type} id={id} name={name} placeholder={placeholder} defaultValue={value} style={style} className={className} />
+            </div>
         </>
     )
 }
@@ -35,10 +38,18 @@ export function App() {
     }
     return (
         <>
-            <h1>Hola Mundo</h1>
-            <h3>desde React</h3>
-            <Input type={"email"} name={"email"} placeholder={"john.doe@example.com"} id={"email"} value={"lrodriguez@4geeks.co"} style={myStyle} className="prueba" />
-            <Input type={"password"} name={"password"}  id={"password"} style={myStyle} />
+            <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                        <h1 className='text-center'><i className="fa-brands fa-react fa-3x"></i></h1>
+                        <h1>Hola Mundo</h1>
+                        <h3>desde React</h3>
+                        <Input type={"email"} name={"email"} placeholder={"john.doe@example.com"} id={"email"} value={"lrodriguez@4geeks.co"} style={myStyle} className="form-control" />
+                        <Input type={"password"} name={"password"} id={"password"} style={myStyle} className="form-control"/>
+                    </div>
+                </div>
+            </div>
+
         </>
     )
 }
